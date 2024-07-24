@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Panel de Administrador</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="admin.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- FontAwesome -->
+    </head>
+<body>
+    <nav>
+        <a href="admin.html">Panel Administrador</a>
+        <a href="employee.html">Panel de Empleado</a>
+        <a href="client.html">Cliente</a>
+        <button id="logout-button"><a href="index.html">Cerrar Sesión</a></button>
+    </nav>
+
+    <div class="container">
+        <div class="admin-container">
+            <h2>Panel de Administrador</h2>
+            <form id="crud-form">
+                <input type="text" id="product-nombre" placeholder="Nombre del producto" required>
+                <input type="number" id="product-stock" placeholder="Stock" required>
+                <input type="number" id="product-precio" placeholder="Precio" required>
+                <button type="submit">Agregar Producto</button>
+
+            </form>
+            <ul id="product-list"></ul>
+            <div class="button-group">
+                <button id="view-cliente-page">Ver Página como Cliente</button>
+                <button id="view-empleado-page">Ver Página como Empleado</button>
+                <button id="add-user-button">Agregar Usuario</button>
+                 <button id="delete-user-button" class="delete-button">Eliminar Usuario</button>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 House Tech. Todos los derechos reservados.</p>
+    </footer>
+
+    <div id="edit-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h3>Editar Producto</h3>
+            <form id="edit-form">
+                <input type="text" id="edit-product-nombre" placeholder="Nombre del producto" required>
+                <input type="number" id="edit-product-stock" placeholder="Stock" required>
+                <input type="number" id="edit-product-precio" placeholder="Precio" required>
+                <input type="hidden" id="edit-product-id">
+                <button type="submit">Guardar Cambios</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="add-user-modal" class="modal">
+        <div class="modal-content">
+
+            <h3>Agregar Usuario</h3>
+            <form id="add-user-form">
+                <input type="text" id="user-nombre" placeholder="Nombre de Usuario" required>
+                <input type="password" id="user-password" placeholder="Contraseña" required>
+                <select id="user-role">
+                    <option value="Admin">Administrador</option>
+                    <option value="Empleado">Empleado</option>
+                    <option value="Cliente">Cliente</option>
+                </select>
+                <button type="submit" id="agguser">Agregar Usuario</button>
+                <p id="info-text">Clickee fuera del cuadro para salir</p>
+            </form>
+        </div>
+    </div>
+
+    <div id="delete-user-modal" class="modal">
+        <div class="modal-content">
+            
+            <h3>Eliminar Usuario</h3>
+            <ul id="user-list"></ul>
+            <p id="info-text">Clickee fuera del cuadro para salir</p>
+        </div>
+    </div>
+
+    <script src="admin.js"></script>
+</body>
+</html>

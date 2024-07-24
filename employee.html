@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página de Empleado</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="employee.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav>
+        <a href="admin.html">Panel Administrador</a>
+        <a href="client.html">Panel Cliente</a>
+        <button id="logout-button"><a href="index.html">Cerrar Sesión</a></button>
+    </nav>
+
+    <div class="container">
+        <div class="employee-container">
+            <h2>Página de Empleado</h2>
+            <ul id="product-list"></ul>
+        </div>
+    </div>
+
+    <!-- Modal de edición -->
+    <div id="edit-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h3>Editar Cantidad y Precio</h3>
+            <form id="edit-form">
+                <input type="hidden" id="edit-product-id">
+                <label for="edit-quantity">Nueva Cantidad:</label>
+                <input type="number" id="edit-quantity" placeholder="Nueva Cantidad" required>
+                <label for="edit-price">Nuevo Precio:</label>
+                <input type="number" id="edit-price" step="0.01" placeholder="Nuevo Precio" required>
+                <button type="submit">Guardar Cambios</button>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 House Tech. Todos los derechos reservados</p>
+    </footer>
+
+    <script src="employe.js"></script>
+</body>
+</html>
